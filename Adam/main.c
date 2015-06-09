@@ -22,10 +22,10 @@ void talkToAdam() {
     char response[256];
   
     while (strcmp(response, "exit") != 0) {
-          printf("Hey dude ");
+        printf("Hey dude ");
         scanf("%s", response);
         
-            if (response[0] == '\n') {
+            if (strcmp(response, "Adam") == 0) {
             printf("Fine be that way! \n");
                 }
         
