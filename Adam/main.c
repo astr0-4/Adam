@@ -7,9 +7,49 @@
 //
 
 #include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <ctype.h>
+
+void talkToAdam();
+bool isUpperCaseString(char *str);
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+    talkToAdam();
 }
+
+void talkToAdam() {
+    char response[256];
+  
+    while (strcmp(response, "exit") != 0) {
+          printf("Hey dude ");
+        scanf("%s", response);
+        
+            if (response[0] == '\n') {
+            printf("Fine be that way! \n");
+                }
+        
+            else if(strcmp(&response[strlen(response)-1], "?") == 0) {
+                printf("Sure \n");
+            }
+            
+            else if (isUpperCaseString(response)){
+                printf("Whoa chill out. Don't shout. \n");
+            }
+            
+            else if (strcmp(response, "exit") != 0) {
+                printf("Whatever \n");
+            }
+        }
+}
+
+bool isUpperCaseString(char *str) {
+    for(int i = 0; i < strlen(str); i++) {
+        if(isupper(str[i]) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+           
